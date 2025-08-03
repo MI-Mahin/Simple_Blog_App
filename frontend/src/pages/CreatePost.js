@@ -95,7 +95,7 @@ const CreatePost = () => {
           
           <div style={{ display: 'flex', gap: '15px' }}>
             <button type="submit" className="btn" disabled={loading} style={{ flex: 1 }}>
-              {loading ? '✨ Publishing...' : '🚀 Publish Post'}
+              {loading ? 'Publishing...' : 'Publish Post'}
             </button>
             <button 
               type="button" 
@@ -104,16 +104,16 @@ const CreatePost = () => {
               disabled={loading}
               style={{ flex: 1 }}
             >
-              ❌ Cancel
+              Cancel
             </button>
           </div>
         </form>
         
-        <div className="nav-link">
+        {/* <div className="nav-link">
           <a href="#" onClick={(e) => { e.preventDefault(); navigate('/posts'); }}>
             ← Back to Posts
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
