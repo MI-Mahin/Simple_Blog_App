@@ -78,25 +78,32 @@ const Posts = () => {
   }
 
   return (
-    <div className="posts-container">
-      <div className="container">
-        <div className="posts-header">
-          <h2>✨ Blog Posts</h2>
-          <div className="header-actions">
-            <button 
-              className="btn"
-              onClick={() => navigate('/create')}
-            >
-              ✍️ Write New Post
-            </button>
-            <button 
-              className="btn btn-secondary"
-              onClick={handleLogout}
-            >
-              🚪 Logout
-            </button>
-          </div>
+    <>
+      {/* Simple top bar with logout */}
+      <div className="top-bar">
+        <div className="top-bar-content">
+          <button 
+            className="logout-btn"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
         </div>
+      </div>
+
+      <div className="posts-container">
+        <div className="container">
+          <div className="posts-header">
+            <h2>✨ Blog Posts ✨</h2>
+            <div className="header-actions">
+              <button 
+                className="btn"
+                onClick={() => navigate('/create')}
+              >
+                ✍️ Write New Post
+              </button>
+            </div>
+          </div>
 
         {posts.length === 0 ? (
           <div className="empty-state">
@@ -137,8 +144,9 @@ const Posts = () => {
             ))}
           </div>
         )}
+              </div>
       </div>
-    </div>
+    </>
   );
 };
 
