@@ -1,5 +1,4 @@
-// src/App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -8,10 +7,15 @@ import CreatePost from './pages/CreatePost';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
+  useEffect(() => {
+    // Set the page title
+    document.title = 'BlogApp - Share Your Thoughts';
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Signup />} /> {/* 👈 default route */}
+        <Route path="/" element={<Signup />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/posts" element={<ProtectedRoute><Posts /></ProtectedRoute>} />
